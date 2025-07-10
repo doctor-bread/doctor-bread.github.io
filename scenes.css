@@ -1,0 +1,12 @@
+[db-scene] {
+  display: none;
+}
+[db-default-scene] {
+  display: block;
+}
+:has([db-scene]:target) [db-default-scene] {
+  display: none;
+}
+[db-scene]:target {
+  display: block;
+}

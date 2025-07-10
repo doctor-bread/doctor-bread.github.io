@@ -1,0 +1,30 @@
+/*
+px.css
+Made for an dataURL image displayer thing.
+wait a minute this is just svg
+
+Example:
+data:text/html,<link rel="stylesheet" href="https://doctorbread.glitch.me/px.css"><div s="50"><hr c="%23ff00ff"><hr><br><hr><hr c="%23ff00ff"></div>
+
+Attributes:
+s = Pixel Size
+c = Color
+*/
+:root {
+  --pxCsize: 1px;
+  --pxCcolor: black;
+}
+hr {
+  display: inline-block;
+  border: none;
+  width: var(--pxCsize);
+  height: var(--pxCsize);
+  margin: 0;
+  background-color: var(--pxCcolor);
+}
+[s] {
+  --pxCsize: attr(s px);
+}
+[c] {
+  --pxCcolor: attr(c type(<color>));
+}

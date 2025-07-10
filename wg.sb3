@@ -1,0 +1,172 @@
+{
+  "targets": [
+    {
+      "isStage": true,
+      "name": "Stage",
+      "variables": { "`jEk@4|i[#Fk?(8x)AV.-my variable": ["my variable", 0] },
+      "lists": {},
+      "broadcasts": {},
+      "blocks": {},
+      "comments": {},
+      "currentCostume": 0,
+      "costumes": [
+        {
+          "name": "hx444A7141674D6333386D",
+          "dataFormat": "svg",
+          "assetId": "cd21514d0531fdffb22204e0ec5ed84a",
+          "md5ext": "cd21514d0531fdffb22204e0ec5ed84a.svg",
+          "rotationCenterX": 240,
+          "rotationCenterY": 180
+        }
+      ],
+      "sounds": [],
+      "volume": 100,
+      "layerOrder": 0,
+      "tempo": 60,
+      "videoTransparency": 50,
+      "videoState": "on",
+      "textToSpeechLanguage": null
+    },
+    {
+      "isStage": false,
+      "name": "Sprite1",
+      "variables": {},
+      "lists": {},
+      "broadcasts": {},
+      "blocks": {
+        "f": {
+          "opcode": "utilities_fetchFrom",
+          "next": null,
+          "parent": "b",
+          "inputs": {
+            "URL": [
+              1,
+              [10, "https://random-word-api.herokuapp.com/word?number=2"]
+            ]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "b": {
+          "opcode": "skyhigh173JSON_json_array_get",
+          "next": null,
+          "parent": "a",
+          "inputs": {
+            "item": [1, [4, "1"]],
+            "json": [3, "f", [10, "[\"scratch\",\"TurboWarp\"]"]]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "a": {
+          "opcode": "operator_join",
+          "next": null,
+          "parent": "c",
+          "inputs": {
+            "STRING1": [3, "b", [10, ""]],
+            "STRING2": [3, "d", [10, ""]]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "e": {
+          "opcode": "skyhigh173JSON_json_array_get",
+          "next": null,
+          "parent": "d",
+          "inputs": {
+            "item": [1, [4, "2"]],
+            "json": [3, "g", [10, "[\"scratch\",\"TurboWarp\"]"]]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "g": {
+          "opcode": "utilities_fetchFrom",
+          "next": null,
+          "parent": "e",
+          "inputs": {
+            "URL": [
+              1,
+              [10, "https://random-word-api.herokuapp.com/word?number=2"]
+            ]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "d": {
+          "opcode": "operator_join",
+          "next": null,
+          "parent": "a",
+          "inputs": {
+            "STRING1": [1, [10, " "]],
+            "STRING2": [3, "e", [10, ""]]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "c": {
+          "opcode": "clipboard_setClipboard",
+          "next": null,
+          "parent": "h",
+          "inputs": { "TEXT": [3, "a", [10, ""]] },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "h": {
+          "opcode": "event_whenkeypressed",
+          "next": "c",
+          "parent": null,
+          "inputs": {},
+          "fields": { "KEY_OPTION": ["any", null] },
+          "shadow": false,
+          "topLevel": true,
+          "x": -238,
+          "y": 198
+        }
+      },
+      "comments": {},
+      "currentCostume": 0,
+      "costumes": [
+        {
+          "name": "costume1",
+          "bitmapResolution": 1,
+          "dataFormat": "svg",
+          "assetId": "927d672925e7b99f7813735c484c6922",
+          "md5ext": "927d672925e7b99f7813735c484c6922.svg",
+          "rotationCenterX": 30.74937882782359,
+          "rotationCenterY": 58.864768144346826
+        }
+      ],
+      "sounds": [],
+      "volume": 100,
+      "layerOrder": 1,
+      "visible": true,
+      "x": 0,
+      "y": 0,
+      "size": 100,
+      "direction": 90,
+      "draggable": false,
+      "rotationStyle": "all around"
+    }
+  ],
+  "monitors": [],
+  "extensions": ["utilities", "skyhigh173JSON", "clipboard"],
+  "extensionURLs": {
+    "utilities": "https://extensions.turbowarp.org/utilities.js",
+    "skyhigh173JSON": "https://extensions.turbowarp.org/Skyhigh173/json.js",
+    "clipboard": "https://extensions.turbowarp.org/clipboard.js"
+  },
+  "meta": {
+    "semver": "3.0.0",
+    "vm": "0.2.0",
+    "agent": "",
+    "platform": { "name": "TurboWarp", "url": "https://turbowarp.org/" }
+  }
+}

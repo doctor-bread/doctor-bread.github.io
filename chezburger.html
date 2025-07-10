@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Golden Cheeseburger Test</title>
+    <link rel="icon" type="image/x-icon" href="https://file.garden/ZSfbzoaLWgVEMKsW/bread1.png" />
+    <link
+      type="application/json+oembed"
+      href="https://embedl.ink/api/oembed?provider_name=doctorbread&provider_url=https://doctorbread.glitch.me/&"
+    />
+    <meta property="og:title" content="Golden Cheeseburger Test" />
+    <meta name="twitter:title" content="Golden Cheeseburger Test" />
+    <meta
+      property="og:description"
+      content="Gambling. Made to prove that you're not that lucky enough for 1 in 10,000."
+    />
+    <meta
+      property="description"
+      content="Gambling. Made to prove that you're not that lucky enough for 1 in 10,000."
+    />
+    <meta
+      property="twitter:description"
+      content="Gambling. Made to prove that you're not that lucky enough for 1 in 10,000."
+    />
+    <meta name="theme-color" content="#4070f0" />
+    <style>
+      body {
+        color: white;
+        background-color: #444;
+      }
+      .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 97vh;
+      }
+      .content {
+        text-align: center;
+        width: 600px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center">
+      <div class="content">
+        <h1>Golden Chezburger Test</h1>
+        <img id="resultImage" alt="burger" />
+        <p id="result"></p>
+        <p>
+          Reload the page to try again!<br />This was made to prove that getting a 1 in 10k is very unlikely.
+        </p>
+      </div>
+    </div>
+    <script>
+      function randomOneInTenThousand() {
+        const randomNumber = Math.floor(Math.random() * 10000) + 1;
+        const resultImage = document.getElementById("resultImage");
+        const resultElement = document.getElementById("result");
+
+        if (randomNumber === 1) {
+          resultImage.src =
+            "https://cdn.glitch.global/39c26745-7068-481c-98bc-5f9f1aab8f32/goldburg.png?v=1716555869942";
+          resultElement.textContent =
+            "You hit the 1 in 10,000 chance!";
+          console.log('yeah they actually got the burger dw bread')
+          /* stop fucki cheating you fuck */
+        } else {
+          resultImage.src =
+            "https://cdn.glitch.global/39c26745-7068-481c-98bc-5f9f1aab8f32/burg.png?v=1716555888775";
+          resultElement.textContent =
+            "Better luck next time. The number was " + randomNumber + ".";
+        }
+      }
+      window.onload = randomOneInTenThousand;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,360 @@
+/*
+<link rel="stylesheet" href="https://doctorbread.glitch.me/db.css">
+
+HUGELY inspired by https://www.w3schools.com/w3css/4/w3.css
+Made to make my life easier.
+*/
+:root {
+  /* Main Colors */
+  --dbBlue: #4070ff;
+  --dbRed: #ff0080;
+
+  /* https://lospec.com/palette-list/pixel-ink */
+  --piBlack: #3e232c;
+  --piWhite: #edf6d6;
+
+  /* Limechatt^Slice Colors */
+  --FineLime: #e9ff93;
+  --DarkLime: #00b282;
+  --ReallyDarkLime: #056b1b;
+  --CapitalLime: #68df50;
+
+  /* Others */
+  /* Properties */
+  --db-counter: db-global-counter;
+
+  --db-scrollStart: 100%;
+  --db-scrollEnd: -100%;
+  --db-scrollspeed: 10s;
+
+  --db-bounceX: 150px;
+  --db-bounceY: 35px;
+
+  --db-glow-color: #ffffb5;
+}
+.db-bg-blue {
+  color: white;
+  background-color: var(--dbBlue);
+}
+.db-bg-red {
+  color: white;
+  background-color: var(--dbRed);
+}
+.db-bg-pixelink {
+  color: var(--piWhite);
+  background-color: var(--piBlack);
+}
+.db-bg-invpixelink {
+  color: var(--piBlack);
+  background-color: var(--piWhite);
+}
+[id^="db-scene"] {
+  display: none;
+
+  &:target {
+    display: block;
+  }
+}
+[id="db-default-scene"] {
+  display: block;
+
+  :has([id^="db-scene"]:target) & {
+    display: none;
+  }
+}
+@font-face {
+  font-family: "Papyrus DB";
+  src: url("https://cdn.glitch.global/39c26745-7068-481c-98bc-5f9f1aab8f32/papyrus.ttf");
+}
+@font-face {
+  font-family: "Comic Sans DB";
+  src: url("https://cdn.glitch.global/39c26745-7068-481c-98bc-5f9f1aab8f32/Comic%20Sans%20MS.ttf");
+}
+@font-face {
+  font-family: "Agate";
+  src: url("https://cdn.glitch.global/39c26745-7068-481c-98bc-5f9f1aab8f32/agate.ttf");
+}
+.db-rainbow {
+  color: #ff0000;
+  animation: rainbow 1s linear infinite;
+}
+.db-rainbow-classic {
+  animation: classicrainbow 1s linear infinite;
+}
+/*
+img.db-rainbow,
+.db-rainbow img {
+  animation: rainbow 1s infinite;
+}
+*/
+@keyframes classicrainbow {
+  0% {
+    color: #ff0000;
+  }
+  17% {
+    color: #ffff00;
+  }
+  33% {
+    color: #00ff00;
+  }
+  50% {
+    color: #00ffff;
+  }
+  67% {
+    color: #0000ff;
+  }
+  83% {
+    color: #ff00ff;
+  }
+  100% {
+    color: #ff0000;
+  }
+}
+@keyframes rainbow {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+.db-spoiler,
+.db-spoiler-nohover {
+  filter: blur(8px);
+}
+.db-spoiler:hover {
+  filter: blur(0px);
+}
+.db-glow {
+  filter: drop-shadow(0 0 8px var(--db-glow-color));
+}
+.db-fire {
+  font-family: Agate, Garamond, Arial, sans-serif;
+  color: red;
+  background: url("https://cdn.glitch.global/4a2a8b82-7194-4ed4-8fae-7e3e8fe23bca/fire.gif")
+    repeat-x bottom / contain;
+}
+.db-blockquote,
+blockquote[db] {
+  display: block;
+  padding: 10px;
+  padding-right: 75px;
+  border-left: 3px solid #707070;
+  background-color: #00000015;
+  background-image: url("https://cdn.glitch.global/39c26745-7068-481c-98bc-5f9f1aab8f32/double-quotes.svg");
+  background-position: right;
+  background-repeat: repeat-y;
+  background-size: 85px;
+  text-indent: 10px;
+}
+:is(.db-blockquote, blockquote[db])[cite]::after {
+  content: "\A\2014"" " attr(cite);
+  margin-top: 5px;
+  text-indent: 5px;
+  display: block;
+  opacity: 0.5;
+  font-style: italic;
+}
+.db-align-container {
+  position: relative;
+}
+.db-align-topleft {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.db-align-topright {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.db-align-bottomleft {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.db-align-bottomright {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.db-align-middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+.db-align-left {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(0%, -50%);
+  -ms-transform: translate(-0%, -50%);
+}
+.db-align-right {
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  transform: translate(0%, -50%);
+  -ms-transform: translate(0%, -50%);
+}
+.db-align-topmiddle {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+}
+.db-align-bottommiddle {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+}
+.db-counter-reset {
+  counter-reset: var(--db-counter);
+}
+.db-counter-add {
+  counter-increment: var(--db-counter);
+}
+.db-counter::after {
+  content: counter(var(--db-counter));
+}
+.db-scroll,
+.db-bounce {
+  overflow: hidden;
+}
+.db-scroll > * {
+  display: block;
+  animation: db-scroll var(--db-scrollspeed) linear infinite;
+}
+@keyframes db-scroll {
+  from {
+    transform: translateX(var(--db-scrollStart));
+  }
+  to {
+    transform: translateX(var(--db-scrollEnd));
+  }
+}
+.db-bounce > * {
+  position: relative;
+  animation: 3s linear 0s infinite alternate none running bounceX,
+    2s linear 0s infinite alternate none running bounceY;
+}
+@keyframes bounceX {
+  0% {
+    left: 0px;
+  }
+  100% {
+    left: calc(100% - var(--db-bounceX));
+  }
+}
+@keyframes bounceY {
+  0% {
+    top: 0px;
+  }
+  100% {
+    top: calc(100% - var(--db-bounceY));
+  }
+}
+.db-code,
+code[db] {
+  font-family: monospace;
+  padding: 0 3px;
+  color: var(--DarkLime);
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 1px solid;
+}
+.db-divspan {
+  display: inline-block;
+}
+.db-document {
+  margin: 2em auto;
+  max-width: 750px;
+  padding: 1em;
+  background-color: white;
+  color: black;
+}
+[db-hover-before]:hover::before {
+  content: attr(db-hover-before);
+}
+[db-hover-after]:hover::after {
+  content: attr(db-hover-after);
+}
+.db-else {
+  display: inline-block;
+}
+.db-if {
+  display: none;
+}
+[db-statement~="hover"]:hover {
+  & > .db-if {
+    display: inline-block;
+  }
+  & > .db-else {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  [db-statement~="mobile"] {
+    & > .db-if {
+      display: inline-block;
+    }
+    & > .db-else {
+      display: none;
+    }
+  }
+}
+[db-statement~="checked"]:has(> input:first-of-type:checked) {
+  & > .db-if {
+    display: inline-block;
+  }
+  & > .db-else {
+    display: none;
+  }
+}
+.db-test1 {
+  width: attr(db);
+}
+[db-resize] {
+  overflow: auto;
+}
+[db-resize~="noresizer"]::-webkit-resizer {
+  background-color: transparent;
+}
+[db-resize~="noscroll"] {
+  overflow: hidden;
+}
+[db-resize~="xy"] {
+  resize: both;
+}
+[db-resize~="x"] {
+  resize: horizontal;
+}
+[db-resize~="y"] {
+  resize: vertical;
+}
+hr[db="break"] {
+  display: inline;
+  border: none;
+
+  &::after {
+    content: " – ";
+  }
+}
+hr[db="tab"] {
+  display: inline;
+  border: none;
+
+  &::after {
+    content: "\00A0\00A0\00A0\00A0";
+  }
+}
+.db-small, small[db] {
+  font-size: smaller;
+  color: gray;
+  font-style: italic;
+}

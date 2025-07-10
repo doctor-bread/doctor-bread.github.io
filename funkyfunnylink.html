@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hi squidwar</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="https://file.garden/ZSfbzoaLWgVEMKsW/bread1.png" />
+    <link
+      type="application/json+oembed"
+      href="https://embedl.ink/api/oembed?provider_name=doctorbread&provider_url=https://doctorbread.glitch.me/?"
+    />
+    <meta property="og:title" content="funkyfunnylink.html" />
+    <meta name="twitter:title" content="funkyfunnylink.html" />
+    <meta
+      property="og:description"
+      content="you were the 1,000,000th user!! click here to get a prize or something i dunno how this shit works really"
+    />
+    <meta
+      property="description"
+      content="you were the 1,000,000th user!! click here to get a prize or something i dunno how this shit works really"
+    />
+    <meta
+      property="twitter:description"
+      content="you were the 1,000,000th user!! click here to get a prize or something i dunno how this shit works really"
+    />
+    <meta name="theme-color" content="#4070f0" />
+    <style>
+      .center-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 97vh;
+      }
+      p.atchoo {
+        border-style: ridge;
+      }
+      .bottomright {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 15px;
+        color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center-image">
+      <img
+        src="https://cdn.glitch.global/39c26745-7068-481c-98bc-5f9f1aab8f32/bread%20thingy.png?v=1711170718103"
+        alt="bread"
+      />
+      <p class="atchoo" id="message"></p>
+    </div>
+    <small class="bottomright">(yes this is your actual ip, don't show it to other people obv and no this doesn't remember your ip)</small>
+    <script>
+      let file = "https://api.ipify.org/";
+      fetch(file)
+        .then((x) => x.text())
+        .then(
+          (y) =>
+            (document.getElementById("message").innerHTML =
+              "&nbsp;hi! did you know your ip is&nbsp;" + y + "&nbsp;")
+        );
+    </script>
+  </body>
+</html>

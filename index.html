@@ -1,8 +1,284 @@
+<!DOCTYPE html>
 <html>
   <head>
-   <meta http-equiv="refresh" content="0; url=https://doctorbread.glitch.me"/>
+    <title>doctorbread</title>
+    <base href="//doctorbread.glitch.me" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/colors.css" />
+    <meta property="og:title" content="doctorbread" />
+    <meta name="twitter:title" content="doctorbread" />
+    <meta name="theme-color" content="#4070f0" />
+    <link
+      type="application/json+oembed"
+      href="https://embedl.ink/api/oembed?provider_name=doctorbread&amp;provider_url=https://discord.com/invite/Y4xJXcHyaN&amp;author_name=&amp;author_url="
+    />
+    <meta
+      property="og:description"
+      content="This website contains all the random stuff I've made."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="description"
+      content="This website contains all the random stuff I've made."
+    />
+    <meta
+      property="twitter:description"
+      content="This website contains all the random stuff I've made."
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://file.garden/ZSfbzoaLWgVEMKsW/bread1.png"
+    />
+    <style>
+      body {
+        /* #eee */
+        background-image: url("https://cdn.glitch.global/39c26745-7068-481c-98bc-5f9f1aab8f32/paper.gif?v=1697007494672");
+        color: #444;
+        margin: 1.5em auto;
+        max-width: 750px;
+        padding: 1em;
+        text-align: justify;
+      }
+      h1 {
+        font-family: "Comic Sans MS";
+        text-decoration-line: underline;
+        text-decoration-style: wavy;
+        color: white;
+      }
+      a {
+        color: var(--dbBlue);
+      }
+      a:hover {
+        color: var(--dbRed);
+      }
+      .external {
+        color: #444;
+      }
+      .old {
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: #0000;
+        text-decoration-line: none;
+        font-size: 2em;
+      }
+      .extraPage {
+        display: none;        
+      }
+      :has(#extra:target) .extraPage {
+        display: block;        
+      }
+      :has(#extra:target) .not-extraPage {
+        display: none;        
+      }
+    </style>
+    <script>
+      function copyText(text) {
+        navigator.clipboard.writeText(text);
+      }
+    </script>
   </head>
+
   <body>
-   <p>This website will be used for stupid stuff.<br />Redirecting you to my glitch website instead...</p>
+    <a class="old" href="old">⏳</a>
+
+    <h1>
+      <a href="/bonus">
+        <img
+          src="https://cdn.glitch.global/39c26745-7068-481c-98bc-5f9f1aab8f32/littlehat.png"
+          style="width: 19px; vertical-align: 12px" /></a
+      ><span style="text-shadow: 3px 3px var(--dbBlue)">doctor</span
+      ><span style="text-shadow: 3px 3px var(--dbRed)">bread</span>
+    </h1>
+
+    <div style="text-indent: 2px">
+      glitch is dying man, might need to move to github
+      <small>
+        <a style="color: #0001" href="javascript:alert('Polo!');"> Marco! </a>
+      </small>
+    </div>
+
+    <ul>
+      <li>
+        <a href="vidconverter">Video Converter</a> - Bare bones video converter.
+        (sometimes doesn't work)
+      </li>
+      <li>
+        <a href="color-removal">Color Remover</a> - Pick a color and it'll
+        remove it.
+      </li>
+      <li>
+        <a
+          href="//turbowarp.org/editor?project_url=https://doctor-bread.github.io/embedder.sb3"
+          >embedder.sb3</a
+        >
+        - External link. Used to make embeds for webpages. Hosting links doesn't
+        work for now.
+      </li>
+      <li>
+        <a href="//limechatt-slice.glitch.me">Limechatt<sup>Slice</sup></a> -
+        Custom chat client. Made by Lemon.
+        <img
+          src="https://cdn.glitch.global/39c26745-7068-481c-98bc-5f9f1aab8f32/new.png"
+          title="Added to homepage in 12/14/24"
+          style="width: 32px"
+        />
+      </li>
+      <li>
+        <a href="/db.css">db.css</a> - Has scenes, colors, fonts,
+        <a href="//limechatt-slice.glitch.me" class="external"
+          >Limechatt<sup>Slice</sup></a
+        >
+        markdown stuff &amp; more.
+        <a href="bonus/dbEx.html" class="external"
+          >Here's where it shows it all.</a
+        >
+        <img
+          src="https://cdn.glitch.global/39c26745-7068-481c-98bc-5f9f1aab8f32/new.png"
+          title="Added to homepage in 02/14/25"
+          style="width: 32px"
+        />
+      </li>
+    </ul>
+
+    <ul>
+      <li>
+        <a href="pi.txt">Pi</a> - A <i>million</i> digits of pi in a .txt file.
+      </li>
+      <!--
+      <li>
+        <a href="oldhomepage">Old Homepage</a>
+        - I found an old screenshot and tried to recreate it. (update:
+        <a
+          href="https://file.garden/ZSfbzoaLWgVEMKsW/oldestimageofdoctorbread.png?10/06/23"
+          >The oldest one!</a
+        >)
+      </li>
+      -->
+      <li>
+        <a
+          href="javascript:void(0)"
+          onclick="copyText('https://doctorbread.glitch.me/download?filename=save.txt&content=data:,Hello+world%21')"
+          >Downloader</a
+        >
+        - Uses search parameters to download. Please don't use this for evil
+        stuff. (copy to clipboard)
+      </li>
+      <li>
+        <a
+          href="tile.html?img=https://file.garden/ZSfbzoaLWgVEMKsW/Sandstone.png"
+          >tile.html</a
+        >
+        - simply tile images by adding ?img= and then an image url
+      </li>
+      <li>
+        <a href="/intro">Introduction</a>
+        - Introduction, Originally a group project. Testing out my CSS skills at
+        the time.
+      </li>
+    </ul>
+
+    <ul>
+      <div class="not-extraPage">
+        <a href="#extra">Show extra webpages</a>
+        <hr hidden id="extra" />
+      </div>
+    </ul>
+    
+    <div class="extraPage">
+      <ul>
+        <li>
+          <a href="spinbowtie.html">Spinning Bowtie</a>
+          - Just a spinning bowtie. Hold to change color.
+        </li>
+        <li>
+          <a href="list.html">Seven Wonders of the World</a>
+          - Testin' out lists. (yeehaw)
+        </li>
+
+        <li>
+          <a href="funkyfunnylink.html">funkyfunnylink.html</a>
+          - My oc tells you your IP address. That's literally it.
+        </li>
+        <li>
+          <a href="departmentstore.html">Department Store Mockup</a>
+          - The department store!
+        </li>
+
+        <li>
+          <a href="chezburger.html">Golden Cheezeburger Test</a>
+          - Literally just gambling. Based off
+          <a class="external" href="//www.roblox.com/games/11005222274/"
+            >this game</a
+          >.
+        </li>
+        <li>
+          <a href="blindtest.html">Blind Test</a> - Tests if you're a blind
+          person.
+        </li>
+        <!--
+        <li>
+          <a href="minswithout">Minutes Without Rulebreak</a>
+          - Finally remade!
+          <a class="external" href="minswithout/v1.html">Here's</a> the old
+          version.
+          <img
+            src="https://cdn.glitch.global/39c26745-7068-481c-98bc-5f9f1aab8f32/new.png"
+            title="Added to homepage in "
+            style="width: 32px; vertical-align: top"
+          />
+        </li>
+        -->
+        <li>
+          <a
+            href="javascript:void(0)"
+            onclick="copyText('https://doctorbread.glitch.me/sharkpool-meme.html?click-the-link-so-it-takes-you-there')"
+            >sharkpool-meme.html</a
+          >
+          - Image that redirects you to Sharkpool's Extension Gallery. (copy to
+          clipboard)
+        </li>
+        <li>
+          <a href="storeV2">Department Store Mockup V2</a>
+          - After 37 days (December 20, 2024), It's finally public!
+          <img
+            src="https://cdn.glitch.global/39c26745-7068-481c-98bc-5f9f1aab8f32/new.png"
+            title="Added to homepage in 1/26/25"
+            width="32"
+          />
+        </li>
+        <li>
+          <a href="chezburgerv2">Golden Chezburger Test V2</a>
+          - Golden Chezburger Test if it was one of roblox's verification
+          puzzles. A simulator for
+          <a class="external" href="//www.roblox.com/games/11005222274/"
+            >this game's</a
+          >
+          "golden chezburger" badge.
+          <img
+            src="https://cdn.glitch.global/39c26745-7068-481c-98bc-5f9f1aab8f32/new.png"
+            title="Added to homepage in 1/31/25"
+            width="32"
+          />
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <small>
+        <i style="color: gray">more things to come soon! in the meantime...</i>
+        <br />
+        you can find me in
+        <a href="//discord.com/invite/Y4xJXcHyaN">discord</a>,
+        <a href="//roblox.com/users/392937583/profile">roblox</a>,
+        <a href="//scratch.mit.edu/users/doctorbread">scratch</a>,
+        <a href="//www.youtube.com/@doctorbreadd">youtube</a>
+        &amp;
+        <a href="mailto:doctorbreadd@outlook.com">email</a>; more on
+        <a href="/intro">intro</a>.
+      </small>
+    </div>
   </body>
 </html>

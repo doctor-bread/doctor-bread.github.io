@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>tile.html</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://file.garden/ZSfbzoaLWgVEMKsW/bread2.png"
+    />
+  </head>
+  <body>
+    <div>
+      <input type="file" id="imageInput" accept="image/*" />
+    </div>
+
+    <script>
+      const imageInput = document.getElementById("imageInput");
+
+      imageInput.addEventListener("change", function (event) {
+        const file = event.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            document.body.style.backgroundImage = `url(${e.target.result})`;
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+      }
+      const imgUrl = getQueryParam("img");
+      if (imgUrl) {
+        document.body.style.backgroundImage = `url(${imgUrl})`;
+      }
+    </script>
+  </body>
+</html>

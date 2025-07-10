@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <base href="https://doctorbread.glitch.me/bonus/openvar.html" />
+    <link rel="stylesheet" href="/db.css" />
+    <style>
+      .db-scroll >* {
+        :has(.pause[open]) & {
+          animation-play-state: paused;
+        }
+        :has(.var[open]) & {
+          --db-scrollspeed: 3s;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <details class="pause">
+      <summary>pause animation</summary>
+    </details>
+    <details class="var">
+      <summary>css variable change</summary>
+    </details>
+    <div class="db-scroll">
+      <p>
+        test of db-scroll; came up to me in a dream and i had to remember this
+        by "details open, change speed/pause of animation using variables"
+      </p>
+    </div>
+  </body>
+</html>

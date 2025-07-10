@@ -1,0 +1,117 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      body {
+        margin: 0;
+        background-color: lightgray;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+      }
+      [scene] {
+        display: none;
+      }
+      [scene]:target {
+        display: block;
+      }
+      [default-scene] {
+        display: block;
+      }
+      :has([scene]:target) [default-scene] {
+        display: none;
+      }
+      .section {
+        margin: 2em;
+        width: 50%;
+        /* padding: 1em 0; */
+        background-color: white;
+        border: 1px solid lightgray;
+        border-radius: 5px;
+        overflow-y: auto;
+        box-shadow: 5px 5px 3px gray;
+      }
+      .header {
+        text-align: center;
+        position: sticky;
+        top: 0;
+        background-color: white;
+      }
+      h2 {
+        margin: 0;
+        padding: 1.5em 1em 1em 1em;
+      }
+      a {
+        text-decoration: none;
+      }
+      a:hover {
+        color: #ff0080;
+        text-decoration: underline wavy;
+      }
+      .nav {
+        border-top: 1px solid lightgray;
+        border-bottom: 1px solid lightgray;
+        border-radius: 1px;
+      }
+      .nav a {
+        display: inline-block;
+        padding: 0.5em 8px;
+        font-size: 1em;
+      }
+      .content,
+      .footer {
+        padding: 24px;
+      }
+      .content h3 {
+        color: #3e7793;
+      }
+      .paragraph p {
+        text-indent: 2em;
+      }
+      .footer {
+        display: flex;
+        border-top: 1px solid lightgray;
+        justify-content: space-between;
+      }
+      .footer a {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+    <div class="section">
+      <div class="header">
+        <h2>Doctor Bread</h2>
+        <div class="nav">
+          <a href="#">HOME</a>
+          <a href="#more">MORE</a>
+        </div>
+      </div>
+      <div class="content">
+        <div class="paragraph">
+          <h3>Introduction</h3>
+          <p>
+            A
+          </p>
+        </div>
+      </div>
+      <div class="footer">
+        <div>
+          <div>Webpages</div>
+          <a href="#">HOME</a>
+          <a href="#more">MORE</a>
+        </div>
+        <div class="text-right">
+          <div>Contact Me</div>
+          <a href="mailto:doctor.bread+eq@outlook.com">
+            doctor.bread+eq@outlook.com
+          </a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </body>
+</html>

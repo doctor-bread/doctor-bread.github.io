@@ -1,0 +1,41 @@
+<title></title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/x-icon" href="https://file.garden/ZSfbzoaLWgVEMKsW/bread1.png"/>
+<base href="https://doctorbread.glitch.me/" />
+      .center {
+        justify-content: center;
+        align-items: center;
+        height: 97vh;
+        display: flex;
+      }
+      .centerList {
+        margin: 1.5em auto;
+        max-width: 750px;
+        padding: 1em;
+        text-align: justify;
+      }
+      .vr {
+        border-left: 1px solid gray;
+        height: auto;
+      }
+
+not head but
+
+<img
+src="https://cdn.glitch.global/39c26745-7068-481c-98bc-5f9f1aab8f32/new.png"
+alt="Added in "
+style="width: 32px; vertical-align: top"
+/>
+
+<img
+src="https://cdn.glitch.global/39c26745-7068-481c-98bc-5f9f1aab8f32/updated.png"
+alt="Updated in "
+style="width: 37px; vertical-align: center"
+/>
+
+<img
+src="https://cdn.glitch.global/39c26745-7068-481c-98bc-5f9f1aab8f32/new.png"
+title="Added to homepage in 12/14/24"
+style="width: 32px;"
+/>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+      summary {
+        list-style: none;
+        font-size: 3em;
+        width: fit-content;
+      }
+      body:has([open]) {
+        color: black;
+        background: url("https://limechatt-slice.glitch.me/image/blu.svg")
+        no-repeat fixed center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>&lt;details&gt; tag &amp; 'open' attribute</h1>
+    <details>
+      <summary>🎚️</summary>
+    </details>
+  </body>
+</html>

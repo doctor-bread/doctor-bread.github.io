@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Time Difference</title>
+  </head>
+  <body>
+      <button onclick="saveTime()">Reset</button>
+      <p id="time-diff"></p>
+
+    <script>
+      function saveTime() {
+        const savedTime = new Date();
+        localStorage.setItem("savedTime", savedTime.toISOString());
+        calculateTimeDifference(savedTime);
+      }
+      function calculateTimeDifference(savedTime) {
+        const currentTime = new Date();
+        const savedTimeObj = new Date(savedTime);
+        const diffMilliseconds = currentTime - savedTimeObj;
+        const diffMinutes = Math.floor(diffMilliseconds / (1000 * 60));
+
+        const timeDiffText = `${diffMinutes}`;
+        document.getElementById("time-diff").textContent = timeDiffText;
+      }
+      window.onload = () => {
+        const savedTime = localStorage.getItem("savedTime");
+        if (savedTime) {
+          calculateTimeDifference(savedTime);
+        }
+      };
+    </script>
+  </body>
+</html>

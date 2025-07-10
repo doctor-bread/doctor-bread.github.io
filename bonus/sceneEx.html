@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>scenes.css Example</title>
+    <link rel="stylesheet" href="https://doctorbread.glitch.me/scenes.css" />
+  </head>
+  <body>
+    <div>
+      <div db-default-scene>
+        <h1>db-default-scene</h1>
+        <p>Default one that shows up. (used as fallback)</p>
+        <a href="#scene1">Go to #scene1</a>
+      </div>
+
+      <div db-scene id="scene1">
+        <h1>db-scene id="scene1"</h1>
+        <p>First scene.</p>
+        <a href="#scene2">Go to #scene2</a>
+      </div>
+
+      <div db-scene id="scene2">
+        <h1>db-scene id="scene2"</h1>
+        <p>Second scene.</p>
+        <a href="#unknown-scene">Go to #unknown-scene (doesn't exist)</a>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta
+      property="og:title"
+      content="okay actually dont enter this one, this one is really really dangerous - bread"
+    />
+    <style>
+      .center-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 97vh;
+      }
+      small.atchoo {
+        border-style: ridge;
+      }
+      .bottomright {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 15px;
+        color: gray;
+      }
+      div {
+        word-wrap: break-word;
+      }
+    </style>
+    <title>danger</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="https://file.garden/ZSfbzoaLWgVEMKsW/bread2.png" />
+  </head>
+  <body>
+    <div class="center-image">
+      <img
+        src="https://cdn.glitch.global/39c26745-7068-481c-98bc-5f9f1aab8f32/bread%20thingy.png?v=1711170718103"
+        alt="bread"
+      />
+      <small class="atchoo" id="message">
+        hold on let me fetch your entire ip thingy..<br />if it displays nothing
+        then the api might be down meaning<br />you're safe for a another day
+      </small>
+    </div>
+    <small class="bottomright">(jesus christ bread what the fuck??)</small>
+    <script>
+      let file = "https://api.my-ip.io/v2/ip.json";
+      fetch(file)
+        .then((x) => x.text())
+        .then(
+          (y) =>
+            (document.getElementById("message").innerHTML =
+              "&nbsp;hi! did you know your full information in json form is&nbsp;" +
+              y +
+              "&nbsp;")
+        );
+    </script>
+  </body>
+</html>

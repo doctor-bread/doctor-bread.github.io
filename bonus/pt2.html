@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <title>Act2_LastName</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+      }
+      .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 10px;
+        width: 600px;
+        height: 500px;
+      }
+      .box {
+        border: 2px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        color: black;
+        background-size: cover;
+        background-position: center;
+      }
+      .none {
+        color: white;
+        background-color: black;
+      }
+      .idol {
+        background-image: url("https://lastfm.freetls.fastly.net/i/u/770x0/f93620094e186183564169d2a7cbd1a0.jpg#f93620094e186183564169d2a7cbd1a0");
+        justify-content: flex-end;
+        align-items: normal;
+        padding: 4px;
+      }
+      .pet {
+        background-image: url("https://file.garden/ZSfbzoaLWgVEMKsW/IMG_20231101_185421.webp");
+        display: block;
+        padding: 5px;
+        color: white;
+      }
+      .place {
+        background-image: url("https://static.dw.com/image/15861462_605.jpg");
+        color: white;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box none">wala po maam :(</div>
+      <div class="box idol">tally hall!!</div>
+      <div class="box pet">Mia</div>
+      <div class="box place">'merica!<br />🦅🦅🦅🦅🦅🦅</div>
+    </div>
+  </body>
+</html>

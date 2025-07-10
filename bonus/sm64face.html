@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://doctorbread.glitch.me/db.css" />
+    <style>
+      body {
+        overflow: hidden;
+      }
+      .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        width: -webkit-fill-available;
+        height: -webkit-fill-available;
+      }
+      .item {
+        display: inline-block;
+        width: max-content;
+        height: max-content;
+      }
+      .item[db-resize] {
+        
+      }
+    </style>
+  </head>
+  <body class="db-bg-pixelink">
+    <div class="container">
+        <div class="item" db-resize="xy noscroll">a</div>
+        <div class="item">b</div>
+        <div class="item">c</div>
+        <div class="item">d</div>
+      </div>
+  </body>
+</html>

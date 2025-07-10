@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embed Text in PNG File</title>
+</head>
+<body>
+
+    <h1>Embed Text in PNG File</h1>
+    <input type="file" id="imageLoader" accept="image/png">
+    <br><br>
+    <label for="textInput">Enter Text to Embed:</label>
+    <input type="text" id="textInput" placeholder="Your text here">
+    <br><br>
+    <button onclick="embedText()">Embed Text</button>
+    <br><br>
+    <a id="downloadLink" style="display:none;">Download Modified PNG</a>
+
+    <script>
+        function embedText() {
+            const fileInput = document.getElementById('imageLoader');
+            const text = document.getElementById('textInput').value;
+            const downloadLink = document.getElementById('downloadLink');
+
+            if (fileInput.files.length === 0) {
+                alert('Please upload a PNG file.');
+                return;
+            }
+
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+            
+            reader.onload = function(event) {
+                const arrayBuffer = event.target.result;
+                const data = new Uint8Array(arrayBuffer);
+
+                // Create a new chunk with tEXt type
+                const textChunkType = [116, 69, 88, 116]; // "tEXt" in ASCII
+                const keyword = "Description";
+                const textBytes = new TextEncoder().encode(keyword + "\0" + text);
+                const length = textBytes.length;
+                
+                // Create the chunk (Length + Type + Data + CRC)
+                const chunk = new Uint8Array(4 + 4 + length + 4);
+                chunk.set([0, 0, 0, length], 0); // Length
+                chunk.set(textChunkType, 4); // Chunk type (tEXt)
+                chunk.set(textBytes, 8); // Chunk data
+
+                // Calculate CRC
+                const crc32 = new Crc32();
+                crc32.update(chunk.subarray(4, 8 + length));
+                const crc = crc32.digest();
+                chunk.set(crc, 8 + length); // CRC
+
+                // Insert the chunk after the IHDR chunk
+                let position = 8; // Skip PNG header
+                while (true) {
+                    const chunkLength = (data[position] << 24) | (data[position + 1] << 16) | (data[position + 2] << 8) | data[position + 3];
+                    const chunkType = String.fromCharCode(...data.slice(position + 4, position + 8));
+                    position += 8 + chunkLength + 4; // Move to the next chunk
+                    if (chunkType === "IHDR") break;
+                }
+
+                // Create a new ArrayBuffer with the additional chunk
+                const newData = new Uint8Array(data.length + chunk.length);
+                newData.set(data.subarray(0, position));
+                newData.set(chunk, position);
+                newData.set(data.subarray(position), position + chunk.length);
+
+                // Create a blob and generate a download link
+                const blob = new Blob([newData], { type: 'image/png' });
+                const url = URL.createObjectURL(blob);
+                downloadLink.href = url;
+                downloadLink.download = 'image.png';
+                downloadLink.style.display = 'block';
+                downloadLink.textContent = 'Download Modified PNG';
+            };
+
+            reader.readAsArrayBuffer(file);
+        }
+
+        // CRC32 implementation
+        class Crc32 {
+            constructor() {
+                this.crc = -1;
+            }
+            update(data) {
+                for (let i = 0; i < data.length; i++) {
+                    let byte = data[i];
+                    this.crc = (this.crc >>> 8) ^ this.table[(this.crc ^ byte) & 0xff];
+                }
+            }
+            digest() {
+                this.crc ^= -1;
+                return new Uint8Array([
+                    (this.crc >>> 24) & 0xff,
+                    (this.crc >>> 16) & 0xff,
+                    (this.crc >>> 8) & 0xff,
+                    this.crc & 0xff
+                ]);
+            }
+            get table() {
+                if (!this._table) {
+                    this._table = new Uint32Array(256);
+                    for (let i = 0; i < 256; i++) {
+                        let c = i;
+                        for (let k = 0; k < 8; k++) {
+                            c = (c & 1) ? (0xedb88320 ^ (c >>> 1)) : (c >>> 1);
+                        }
+                        this._table[i] = c;
+                    }
+                }
+                return this._table;
+            }
+        }
+    </script>
+
+</body>
+</html>

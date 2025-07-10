@@ -1,0 +1,143 @@
+<html>
+  <head>
+    <style>
+      .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-template-rows: auto auto auto auto auto auto;
+        /* i need a better way to make this clean rather than adding 8 autos */
+        gap: 10px;
+        padding: 20px;
+      }
+      .grid-item {
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        text-align: center;
+        border-radius: 5px;
+      }
+      .item1 {
+        grid-column-start: 1;
+        grid-column-end: 5;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        background: url("https://cdn.glitch.global/39c26745-7068-481c-98bc-5f9f1aab8f32/3dgifmaker84791.gif")
+          rgba(205 172 90 / 75%);
+        background-blend-mode: overlay;
+        color: white;
+      }
+      h1 {
+        font-family: "Comic Sans MS";
+        text-shadow: #0f0 2px 2px;
+      }
+      .item2 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 7;
+      }
+      .item3 {
+        grid-column-start: 2;
+        grid-column-end: 4;
+        grid-row-start: 2;
+        grid-row-end: 3;
+      }
+      .item4 {
+        grid-column-start: 4;
+        grid-column-end: 5;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        width: 148px;
+        height: 210px;
+        background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8HaAvyDtzRN6KjXmaRzyZUK0TGZcYRJYVqA&s")
+          no-repeat center;
+      }
+      .item5 {
+        grid-column-start: 2;
+        grid-column-end: 5;
+        grid-row-start: 3;
+        grid-row-end: 8;
+      }
+      .item6 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 7;
+        grid-row-end: 8;
+      }
+      p {
+        padding: 0 200px
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="grid-item item1">
+        <h1>The Space News</h1>
+      </div>
+      <div class="grid-item item2">
+        <h4>Photograph<br />of the week</h4>
+        <div
+          style="
+            background: url(https://picsum.photos/200/200);
+            width: 200px;
+            height: 200px;
+          "
+        ></div>
+      </div>
+      <div class="grid-item item3">
+        <h2>JUST THIS WEEK!</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra
+          euismod quam, eu egestas enim bibendum vitae. Sed gravida risus varius
+          eros porta mollis. Donec ultricies suscipit nisl sed venenatis.
+          Suspendisse tempor luctus tellus ac porttitor. Aenean eleifend maximus
+          purus. Duis egestas ornare pharetra. Nulla faucibus finibus nulla,
+          sodales rutrum purus feugiat et. Pellentesque habitant morbi tristique
+          senectus et netus et malesuada fames ac turpis egestas. In malesuada
+          lacus et elementum sodales. Duis eu sapien fringilla, cursus tellus
+          at, venenatis dolor. Suspendisse malesuada enim vitae suscipit
+          gravida. Nunc vitae consectetur mi, et consectetur dui. Nulla in
+          finibus dui. Etiam in turpis congue, blandit arcu porttitor, porttitor
+          quam. Duis dictum turpis eget vulputate ultricies. Vivamus nec ex nec
+          justo aliquet sagittis. Quisque porttitor lectus nec leo dignissim
+          vestibulum. Nam venenatis rhoncus viverra. Cras venenatis dignissim
+          odio. Nulla facilisi. Integer malesuada dui vitae ipsum congue
+          lacinia. Aenean porttitor nisi purus, eu dapibus lectus rhoncus non.
+          Fusce sit amet tortor eget elit blandit vestibulum. Mauris porta nisl
+          magna, non sollicitudin erat tempor quis. Nulla egestas tempor risus,
+          nec pharetra magna consectetur id. Ut eleifend nisl ex, eu maximus
+          quam tristique ac. Curabitur ac ligula id ligula tincidunt eleifend et
+          id leo. Integer quis nisi sem. Maecenas sollicitudin leo id fringilla
+          dignissim. Nunc vel sem a augue volutpat fermentum in vel ligula.
+          Integer lobortis rutrum ex ultricies elementum. Nunc a lacus varius,
+          aliquet justo aliquet, feugiat ligula.
+        </p>
+      </div>
+      <div class="grid-item item4"></div>
+      <div class="grid-item item5">
+        <h2>GOOD NEWS!</h2>
+        <p>
+          Vivamus condimentum consectetur blandit. Mauris iaculis mauris cursus,
+          cursus augue quis, varius nisi. Mauris lobortis, mi quis mollis
+          convallis, ligula dui elementum metus, nec lobortis felis sem et
+          libero. Ut pretium velit diam, id dapibus lacus imperdiet et. Cras
+          tincidunt nisi pulvinar tellus iaculis, et lacinia dui aliquet. In
+          sodales ullamcorper risus eu pretium. Proin aliquet varius ligula ut
+          placerat. Cras tempus elit sit amet sapien vehicula, non rutrum dolor
+          ultricies. Quisque imperdiet mattis purus. Sed convallis risus eget
+          ligula varius tempus. Cras egestas mauris sit amet dolor interdum, ac
+          rutrum nisl rutrum. Nulla et nibh ultrices, tincidunt libero ac,
+          ullamcorper nulla. Duis eu nunc nunc. Phasellus non elit sed urna
+          pulvinar tempus eget at justo. Aenean eu lorem libero. Orci varius
+          natoque penatibus et magnis dis parturient montes, nascetur ridiculus
+          mus. Sed sit amet bibendum urna. Donec porttitor purus est, at euismod
+          mauris interdum a.
+        </p>
+      </div>
+      <div class="grid-item item6">
+        Email:<br /><a href="mailto:doctor.bread@outlook.com"
+          >doctor.bread@outlook.com</a
+        >
+      </div>
+    </div>
+  </body>
+</html>

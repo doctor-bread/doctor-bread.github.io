@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS Activity</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="https://file.garden/ZSfbzoaLWgVEMKsW/bread2.png" />
+    <style>
+      body {
+        background-image: url("https://cdn.glitch.global/39c26745-7068-481c-98bc-5f9f1aab8f32/darkbubble.png?v=1712035753734");
+        text-align: center;
+      }
+      .font {
+        color: #f00;
+        font-family: cursive;
+        text-shadow: 2px 2px #00f;
+        text-decoration-line: underline;
+        text-decoration-style: wavy;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="font" id="nameid"></h1>
+
+    <p style="color: red">
+      Date of birth: September 2, 2009<br />
+      Hobbies: Programming and Drawing
+    </p>
+    <p style="color: red">
+      im trying make this look like<br />that space jam website
+    </p>
+    <small style="color: red">
+      this website looks like<br />
+      a test website of a kids toy review channel<br />
+      atchOO<a style="color: red" href="https://doctorbread.glitch.me"
+        ><strong>OOO!!</strong></a
+      >
+    </small>
+     <script>
+      let params = new URL(document.location).searchParams;
+      let name = params.get("name");
+      document.getElementById("nameid").innerHTML = name + "'s Webpage";
+    </script>
+    <!--/bonus/intro.html?name=Bread-->
+  </body>
+</html>

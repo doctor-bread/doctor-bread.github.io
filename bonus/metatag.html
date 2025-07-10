@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Initial description" />
+    <meta name="keywords" content="initial, keywords" />
+    <meta name="author" content="Initial Author" />
+    <title>Meta Tag Manipulation</title>
+  </head>
+  <body>
+    <button onclick="updateMetaTags()">Update Meta Tags</button>
+
+    <script>
+      function updateMetaTags() {
+        // Accessing the meta tags by their name attribute
+        var descriptionMetaTag = document.querySelector(
+          'meta[name="description"]'
+        );
+        var keywordsMetaTag = document.querySelector('meta[name="keywords"]');
+        var authorMetaTag = document.querySelector('meta[name="author"]');
+
+        // Overwriting the content attribute of the meta tags
+        descriptionMetaTag.setAttribute("content", "New description");
+        keywordsMetaTag.setAttribute("content", "new, keywords");
+        authorMetaTag.setAttribute("content", "New Author");
+      }
+    </script>
+  </body>
+</html>

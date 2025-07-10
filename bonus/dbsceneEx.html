@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <style>
+      .db-scene {
+        display: none;
+      }
+      .db-default-scene {
+        display: block;
+      }
+      :has(.db-scene:target) .db-default-scene {
+        display: none;
+      }
+      .db-scene:target {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="db-default-scene">
+        <h1>db-default-scene</h1>
+        <p>Default one that shows up. (used as fallback)</p>
+        <a href="#scene1">Go to #scene1</a>
+      </div>
+
+      <div class="db-fallback">
+        <h1>db-fallback</h1>
+        <p>Used as fallback.</p>
+        <a href="#scene1">Go to #scene1</a>
+      </div>
+
+      <div class="db-scene" id="scene1">
+        <h1>db-scene id="scene1"</h1>
+        <p>First scene.</p>
+        <a href="#scene2">Go to #scene2</a>
+      </div>
+
+      <div class="db-scene" id="scene2">
+        <h1>db-scene id="scene2"</h1>
+        <p>Second scene.</p>
+        <a href="#unknown-scene">Go to #unknown-scene (doesn't exist)</a>
+      </div>
+    </div>
+  </body>
+</html>

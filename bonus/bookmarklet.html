@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>bookmarklet test</title>
+  </head>
+    <body>
+      <a
+        href="javascript: (() => {
+  const allElements = document.querySelectorAll('*');
+
+  for (let element of allElements) {
+    element.style.fontFamily = 'Comic Sans MS';
+  }
+})();"
+        >comic sans</a
+      >
+      <p>
+        drag the text into your bookmark and turn every text in any website into
+        comic sans!!
+      </p>
+    </body>
+</html>

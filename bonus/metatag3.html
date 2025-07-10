@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="og:description" content="" id="metaDescription" />
+  </head>
+  <body>
+    <!-- Your HTML content here-->
+
+    <script>
+      // Function to update meta description tag
+      function updateMetaDescription() {
+        const metaDescription = document.querySelector(
+          'meta[name="og:description"]'
+        );
+        const searchParams = new URLSearchParams(window.location.search);
+        const descParam = searchParams.get("desc");
+        if (descParam) {
+          metaDescription.setAttribute("content", descParam);
+        }
+      }
+
+      // Call the updateMetaDescription function when the page loads
+      window.onload = updateMetaDescription;
+    </script>
+  </body>
+</html>

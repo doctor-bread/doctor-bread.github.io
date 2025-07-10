@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>:target</title>
+    <style>
+      code {
+        padding: 0 3px;
+        color: #00b282;
+        border-radius: 2px;
+        background-color: rgba(255, 255, 255, 0.85);
+        border: 1px solid #00b282;
+      }
+      [list] {
+        border: 1px solid lightgray;
+        border-radius: 2px;
+        max-width: 140px;
+
+        & * {
+          padding: 5px;
+        }
+        & a {
+          display: block;
+          text-align: center;
+        }
+        &:target :is(.items, .eval) {
+          display: block;
+        }
+      }
+      .items,
+      .eval {
+        display: none;
+      }
+      .items {
+        border: 1px solid lightgray;
+        border-width: 1px 0;
+        background-color: #dbedff;
+      }
+      .eval {
+        text-align: center;
+      }
+    </style>
+    <script>
+      document.getElementsByClassName("eval").innerHTML += "a";
+    </script>
+  </head>
+  <body>
+    <h1>The :target pseudo-class</h1>
+    <p>
+      Seeing if I could recreate the <code>&lt;details&gt;</code> tag with a
+      pseudo-class.
+      <br />
+      ...and also the scratch 3 list.
+    </p>
+    <hr />
+    <div list id="ab">
+      <a href="#ab">List</a>
+      <div class="items"></div>
+      <div class="eval">length 0</div>
+    </div>
+  </body>
+</html>

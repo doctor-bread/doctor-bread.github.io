@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .center-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center-image">
+      <img
+        src="https://cdn.glitch.global/39c26745-7068-481c-98bc-5f9f1aab8f32/star.gif?v=1710250853899"
+        alt="Description of the image"
+      />
+      <p>&lt;&nbsp;&nbsp; hi!! your ip is&nbsp;</p>
+      <p id="message"></p>
+
+      <script>
+        let file = "https://api.ipify.org/";
+        fetch(file)
+          .then((x) => x.text())
+          .then((y) => (document.getElementById("message").innerHTML = y));
+      </script>
+    </div>
+  </body>
+</html>

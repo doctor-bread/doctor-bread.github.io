@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <style>
+      .i1 {
+        grid-area: ones;
+      }
+      .i2 {
+        grid-area: twos;
+      }
+      .i3 {
+        grid-area: threes;
+      }
+      .container {
+        display: grid;
+        grid-template-areas:
+          "ones ones"
+          "ones ones"
+          "twos threes"
+          "twos threes";
+      }
+      .container > div {
+        border: 1px solid black;
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body class="container">
+    <div class="i1">one</div>
+    <div class="i2">two</div>
+    <div class="i3">three</div>
+  </body>
+</html>

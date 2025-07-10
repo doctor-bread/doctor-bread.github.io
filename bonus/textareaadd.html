@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add to Textarea</title>
+</head>
+<body>
+
+<textarea id="myTextarea" rows="4" cols="50">Initial text in textarea</textarea><br><br>
+
+<button onclick="addToTextarea()">Add Text to Textarea</button>
+
+<script>
+function addToTextarea() {
+  var textarea = document.getElementById("myTextarea");
+  var newText = "Added text ";
+  
+  // Append new text to existing textarea value
+  textarea.value += newText;
+}
+</script>
+  
+<button onclick="addToTextarea2()">Add Text to Textarea2</button>
+
+<script>
+function addToTextarea2() {
+  var textarea = document.getElementById("myTextarea");
+  var newText = "Added text2 ";
+  
+  // Append new text to existing textarea value
+  textarea.value += newText;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://doctorbread.glitch.me/db.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      *:not(body) {
+        margin: 0;
+      }
+      .db-bg-pixelink a {
+        color: var(--piWhite);
+      }
+      hr {
+        margin: 10px 0;
+      }
+      .db-align-container {
+        text-align: center;
+      }
+      .db-align-container [class*="db-align-"] {
+        margin: 10px;
+
+        &::after {
+          content: attr(class);
+        }
+      }
+      summary {
+        list-style-type: none;
+        cursor: pointer;
+        /* margin: 5px 0; */
+        width: max-content;
+      }
+      :has(.themeMode[open]) body {
+        color: var(--piWhite);
+        background-color: var(--piBlack);
+        color-scheme: dark;
+      }
+      .db-bounce {
+        width: 280px;
+        height: 180px;
+        border: 1px solid black;
+      }
+      :has(.themeMode[open]) .db-bounce {
+        border: 1px solid var(--piWhite);
+      }
+      .resize-box {
+        border: 1px solid;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 15px;
+        width: max-content;
+      }
+      .alldbtest {
+        display: none;
+      }
+      :has(#db-scene-2:target) .alldbtest {
+        display: block;
+      }
+    </style>
+    <script>
+      function copyLink() {
+        navigator.clipboard.writeText(
+          '<link rel="stylesheet" href="https://doctorbread.glitch.me/db.css">'
+        );
+      }
+    </script>
+  </head>
+  <body class="db-document">
+    <h1>dbEx.html, Showcasing the db.css file.</h1>
+    <p>
+      <a href="javascript:copyLink()"
+        >Copy external stylesheet that has db.css file</a
+      >
+    </p>
+    <details class="themeMode">
+      <summary>🌙</summary>
+    </details>
+    <hr />
+
+    <h1>var(--db<code db>color</code>) Colors</h1>
+    <div>
+      <strong>Main Colors</strong>
+      <div style="color: var(--dbBlue)">--dbBlue</div>
+      <div style="color: var(--dbRed)">--dbRed</div>
+
+      <strong>Pixel Ink</strong>
+      <div style="color: var(--piBlack)">--piBlack</div>
+      <div style="color: var(--piWhite)">--piWhite</div>
+
+      <strong>Limechatt<sup>Slice</sup> Colors</strong>
+      <div style="color: var(--FineLime)">--FineLime</div>
+      <div style="color: var(--DarkLime)">--DarkLime</div>
+      <div style="color: var(--ReallyDarkLime)">--ReallyDarkLime</div>
+      <div style="color: var(--CapitalLime)">--CapitalLime</div>
+    </div>
+    <h1>db-bg-<code db>color</code></h1>
+    <div class="db-bg-blue" style="padding: 15px">
+      <h1>blue</h1>
+      <p>the main blue color</p>
+    </div>
+    <div class="db-bg-red" style="padding: 15px">
+      <h1>red</h1>
+      <p>the alternative red color</p>
+    </div>
+    <div class="db-bg-pixelink" style="padding: 15px">
+      <h1>pixelink</h1>
+      <p>
+        the secret color,
+        <a href="https://lospec.com/palette-list/pixel-ink" target="_blank">
+          here's where i got it from
+        </a>
+      </p>
+    </div>
+    <div class="db-bg-invpixelink" style="padding: 15px">
+      <h1>invpixelink</h1>
+      <p>pixel ink, inverted</p>
+    </div>
+    <hr />
+    <div>
+      <h1>db-scene IDs</h1>
+      <p>
+        Allows you to scroll through different "scenes". If an id starts with
+        <code db>db-scene</code> or is equal to
+        <code db>db-default-scene</code>, it'll behave like these examples. If
+        you want to get more complicated with these, ex. like other elements
+        turning on when <code db>#db-scene-2</code> is showing, you could do
+        this: <br />
+        <img
+          src="https://cdn.glitch.global/39c26745-7068-481c-98bc-5f9f1aab8f32/targetexample.png?v=1739184607153"
+        />
+      </p>
+      <p><code db>&lt;hr hidden id="db-scene-1" /&gt;</code> never fails!!</p>
+      <div class="resize-box">
+        <div id="db-default-scene">
+          <h2>id="db-default-scene"</h2>
+          <p>Default one that shows up. (used as fallback)</p>
+          <a href="#db-scene-1">Go to #db-scene-1</a>
+        </div>
+
+        <div id="db-scene-1">
+          <h2>id="db-scene-1"</h2>
+          <p>First scene.</p>
+          <a href="#db-scene-2">Go to #db-scene-2</a>
+        </div>
+
+        <div id="db-scene-2">
+          <h2>id="db-scene-2"</h2>
+          <p>Second scene.</p>
+          <a href="#unknown-scene">Go to #unknown-scene (doesn't exist)</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="alldbtest">
+      <hr />
+      <p>Well, while you're here, have some tests that didn't work at all.</p>
+      <details>
+        <summary><u>all db-test's</u></summary>
+        <div class="db-test1" db="500px">
+          <h2>db-test1 (this one works now, in chrome 133)</h2>
+          <p>Testing out if attr() could work in something like width.</p>
+        </div>
+      </details>
+    </div>
+    <hr />
+    <div style="font-family: Papyrus DB, sans-serif">
+      <h1>SANS, LOOK! A HUMAN! (Papyrus Font)</h1>
+    </div>
+    <div style="font-family: Comic Sans DB, sans-serif">
+      <h1>Comic Sans DB, supported on mobile.</h1>
+    </div>
+    <div style="font-family: cursive, sans-serif">
+      <h1>Actual Comic Sans named "cursive", isn't supported on mobile</h1>
+    </div>
+    <h1>db-fire (Agate Font)</h1>
+    <div class="db-fire">
+      <h1>AGHHH FIRE OR SOMETHING ALONG THE LINES OF THOSE</h1>
+    </div>
+    <div class="db-fire">
+      <p>its kind of hard to read when the text is small lol</p>
+    </div>
+    <hr />
+    <div class="db-rainbow">
+      <h1>db-rainbow</h1>
+      <img src="https://limechatt-slice.glitch.me/image/blu.svg" />
+    </div>
+    <div class="db-rainbow-classic">
+      <h1>db-rainbow-classic</h1>
+      <p>sadly does not work for images.</p>
+    </div>
+    <div>
+      <div class="db-spoiler">
+        <h1>db-spoiler</h1>
+        <img src="https://limechatt-slice.glitch.me/lime.svg" />
+      </div>
+      <h1>db-spoiler-nohover, makes it blurred only</h1>
+      <div class="db-spoiler-nohover">
+        <h1>a</h1>
+        <img src="https://limechatt-slice.glitch.me/lime.svg" />
+      </div>
+    </div>
+    <div class="db-glow">
+      <h1>db-glow</h1>
+      <p>
+        Control the glow with the
+        <code class="db-code db-glow" style="--db-glow-color: var(--DarkLime)"
+          >--db-glow-color</code
+        >
+        property.
+      </p>
+      <img src="https://limechatt-slice.glitch.me/image/blu.svg" />
+    </div>
+    <hr />
+    <h1>db-align-container</h1>
+    <div
+      class="db-align-container db-bg-blue"
+      db-resize="y"
+      style="height: 300px"
+    >
+      <div class="db-align-topleft"></div>
+      <div class="db-align-topmiddle"></div>
+      <div class="db-align-topright"></div>
+      <div class="db-align-left"></div>
+      <div class="db-align-middle"></div>
+      <div class="db-align-right"></div>
+      <div class="db-align-bottomleft"></div>
+      <div class="db-align-bottommiddle"></div>
+      <div class="db-align-bottomright"></div>
+    </div>
+    <hr />
+    <h1>db-blockquote / &lt;blockquote db&gt;</h1>
+    <div class="db-blockquote">
+      the doodoo. the doodoo. the doodoo.<br />
+      the doodoo. the doodoo. the doodoo.<br />
+      the doodoo. the doodoo. the doodoo.<br />
+      the doodoo. the doodoo. the doodoo.<br />
+      the doodoo. the doodoo. the doodoo.<br />
+      the doodoo. the doodoo. the doodoo.<br />
+      the doodoo. the doodoo. the doodoo.<br />
+      the doodoo. the doodoo. the doodoo.<br />
+    </div>
+    <p>Adding a 'cite' attribute</p>
+    <blockquote db cite="http://www.worldwildlife.org/who/index.html">
+      For 60 years, WWF has worked to help people and nature thrive. As the
+      world's leading conservation organization, WWF works in nearly 100
+      countries. At every level, we collaborate with people around the world to
+      develop and deliver innovative solutions that protect communities,
+      wildlife, and the places in which they live.
+    </blockquote>
+    <h1>db-code / &lt;code db&gt;</h1>
+    <p>
+      You can control the <code db>db-code</code>'s color simply by just using
+      the <code db style="color: var(--piBlack)">color</code> property!
+    </p>
+    <h1>db-small / &lt;small db&gt;</h1>
+    <small db>hi, this is the small tag reimagined!</small>
+    <hr />
+    <div class="db-counter-reset">
+      <h1>db-counter-reset, db-counter-add &amp; db-counter</h1>
+      <p>
+        You can set the counters by using
+        <code db>--db-counter: db-global-counter</code>.
+      </p>
+      <ul style="margin: 1em 0">
+        <li class="db-counter-add">Item #<span class="db-counter"></span></li>
+        <li class="db-counter-add">Item #<span class="db-counter"></span></li>
+        <li class="db-counter-add">Item #<span class="db-counter"></span></li>
+      </ul>
+    </div>
+    <div class="db-scroll" style="--db-scrollEnd: -90%">
+      <h1>db-scroll</h1>
+      <p>
+        You can control the speed with the
+        <code db>--db-scrollspeed</code> property. It depends on the element's
+        size.<br />
+        You can use <code db>--db-scrollStart: 100%</code> &amp;
+        <code db>--db-scrollEnd: -100%</code> to control when the animation
+        loops.
+      </p>
+    </div>
+    <h1>db-bounce</h1>
+    <div
+      class="db-bounce"
+      db-resize="xy noscroll"
+      style="--db-bounceX: 143px; --db-bounceY: 32px"
+    >
+      <h1>db-bounce</h1>
+    </div>
+    <p>
+      You can use <code db>--db-bounceX</code> &amp;
+      <code db>--db-bounceY</code> to control when they hit the border.
+    </p>
+    <h1>db-divspan</h1>
+    <div>
+      Divspan's basically <code db>display: inline-block</code>. Something
+      <div class="db-divspan db-bg-red" style="width: 50px; height: 50px">
+        like this
+      </div>
+      , where its a block but also doesn't add linebreaks.
+    </div>
+    <hr />
+    <div class="db-document" style="box-shadow: 2px 2px 5px #0000008c">
+      <h1>db-document</h1>
+      <p>
+        so umm like i have a confession, i stole this one from
+        <a href="https://www.roblox.com/users/4551995688/profile"
+          >my friend tomato</a
+        >
+        lmaoo, this is probably how i got deep into css
+      </p>
+    </div>
+    <div>
+      <h1>The "db-hover-<code db>before/after</code>" attribute</h1>
+      <div>
+        <p db-hover-before="Hi! I appear before the text.">
+          <u>Before text</u>
+        </p>
+        <p db-hover-after="Hi! I appear after the text.">
+          <u>After text</u>
+        </p>
+      </div>
+    </div>
+    <hr />
+    <h1>The "db-statement" Attribute</h1>
+    <ul>
+      <li>
+        <strong>"hover"</strong><br />
+        Hovering over this span tag =&gt;
+        <span db-statement="hover">
+          <span class="db-if">
+            <code db>db-if (Hovering)</code>
+          </span>
+          <span class="db-else">
+            <code class="db-code" style="color: var(--dbRed)"
+              >db-else (Not hovering)</code
+            >
+          </span>
+        </span>
+        will switch it.
+      </li>
+      <li>
+        <strong>"mobile"</strong><br />
+        This span tag changes when the screen is less than 768px. =&gt;
+        <span db-statement="mobile">
+          <span class="db-if">
+            <code db>db-if (Less than 768px)</code>
+          </span>
+          <span class="db-else">
+            <code class="db-code" style="color: var(--dbRed)"> db-else </code>
+          </span>
+        </span>
+      </li>
+      <li>
+        <strong>"checked"</strong><br />
+        This span tag changes when the first input stated inside is checked, any
+        checkbox input is ignored. I colored the useless inputs red for a more
+        noticable difference. =&gt;
+        <span db-statement="checked">
+          <input type="checkbox" />
+          <input type="checkbox" style="accent-color: var(--dbRed)" checked />
+          <span class="db-if">
+            <input type="checkbox" style="accent-color: var(--dbRed)" checked />
+            <code db>db-if (first input checked)</code>
+          </span>
+          <span class="db-else">
+            <code class="db-code" style="color: var(--dbRed)">
+              db-else (first input isn't checked)
+            </code>
+          </span>
+        </span>
+      </li>
+    </ul>
+    <hr />
+    <h1>The 'db-resize' Attribute</h1>
+    <ul>
+      <li>
+        <strong>x, y &amp; xy</strong><br />
+        Defines how an element can be resized.
+        <div db-resize="xy" class="resize-box">
+          <h1>db-resize="xy"</h1>
+        </div>
+      </li>
+      <li>
+        <strong>noresizer</strong><br />
+        Hides the resizer.
+        <div db-resize="xy noresizer" class="resize-box">
+          <h1>db-resize="xy noresizer"</h1>
+        </div>
+      </li>
+      <li>
+        <strong>noscroll</strong><br />
+        Sets overflow to hidden.
+        <div db-resize="xy noscroll" class="resize-box">
+          <h1>db-resize="xy noscroll"</h1>
+        </div>
+      </li>
+    </ul>
+    <hr />
+    <h1>&lt;hr&gt; &amp; the 'db' attribute</h1>
+    <p>
+      The sole reason why I absolutely love &lt;hr&gt; is because it is a single
+      tag where you could put everything in using pseudo-elements such as
+      <code db>::before/after</code>.
+    </p>
+    <ul>
+      <li>
+        <strong>"break"</strong><br />
+        Adds a dash.<br />
+        Lorem ipsum dolor sit amet
+        <hr db="break" />
+        consectetur adipiscing elit.
+      </li>
+      <li>
+        <strong>"tab"</strong><br />
+        Adds a fake tab character made with spaces. The tab character isn't
+        really supported. This is probably workaroundable.<br />
+        Lorem ipsum dolor sit amet
+        <hr db="tab" />
+        consectetur adipiscing elit.
+      </li>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>a</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="https://linkh.at/drbreadico" />
+    <style>
+      body {
+        background-image: url("");
+      }
+      .comicsans {
+        font-family: cursive;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>this is a test about search params</p>
+    <p>add "?x=hi" into the link rn</p>
+    <br />
+    <p id="paragraph" class="comicsans"></p>
+
+    <script>
+      let params = new URL(document.location).searchParams;
+      let name = params.get("x");
+      document.getElementById("paragraph").innerHTML = name;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,371 @@
+:root {
+  --FineLime: #e9ff93;
+  --DarkLime: #00b282;
+  --ReallyDarkLime: #056b1b;
+  --CapitalLime: #68df50;
+
+  --transparent: rgba(255, 255, 255, 0.4);
+  --glow: #ffffb5;
+  --untrusted: #ff7b00;
+  --small: #858585;
+}
+body {
+  background: #ccdddd;
+  display: grid;
+  grid-template-columns: repeat(13, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  gap: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 10px;
+
+  & > div {
+    border-radius: 5px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 5px;
+  color: var(--DarkLime);
+}
+.hidden {
+  display: none;
+}
+h2:has(a) {
+  font-size: 1em;
+  font-weight: normal;
+  margin: 1em 0;
+  /* lemon i will slap the shit out of you istg */
+}
+input#authorInput,
+textarea {
+  width: -webkit-fill-available;
+  border: 1px solid var(--DarkLime);
+  border-radius: 2px;
+  color: var(--ReallyDarkLime);
+}
+textarea {
+  resize: vertical;
+  height: 140px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+button {
+  width: auto !important;
+  cursor: pointer;
+  color: var(--DarkLime);
+  border-radius: 2px;
+  background-color: var(--transparent);
+  border: 1px solid var(--DarkLime);
+  margin: 2px 0;
+}
+.flexbtns {
+  display: flex;
+  flex-wrap: wrap;
+  & > button {
+    margin: 2px 1px;
+    display: flex;
+    align-items: center;
+  }
+}
+a {
+  color: var(--DarkLime);
+}
+code {
+  padding: 0 3px;
+  color: var(--DarkLime);
+  border-radius: 2px;
+  background-color: var(--transparent);
+  border: 1px solid var(--DarkLime);
+}
+hr {
+  border: 1px solid var(--DarkLime);
+}
+.titleHandler i {
+  color: black;
+}
+img[src="lime.svg"] {
+  width: 40px;
+  margin: 0 10px 0 0;
+}
+.untrusted-site {
+  color: var(--untrusted);
+  text-decoration: underline wavy;
+  text-decoration-thickness: 1px;
+}
+.untrusted-site::after {
+  content: " ⚠";
+}
+a[href^="javascript:"],
+.js-link {
+  color: var(--dbRed);
+  text-decoration: underline wavy;
+  text-decoration-thickness: 1px;
+}
+li > input {
+  width: auto;
+}
+.codeblockFire {
+  color: white;
+  border: 1px solid var(--dbRed);
+  background: var(--piBlack)
+    url("https://cdn.glitch.global/4a2a8b82-7194-4ed4-8fae-7e3e8fe23bca/fire.gif")
+    center / cover;
+  background-blend-mode: overlay;
+}
+.comicsans {
+  font-family: "Comic Sans MS", "Chalkboard SE", "Comic Neue", Arial, sans-serif;
+  font-size: 0.7em;
+}
+.papyrus {
+  font-family: "Papyrus Serif", sans-serif;
+  font-size: 0.7em;
+}
+.logo {
+  color: var(--DarkLime);
+  text-decoration: overline;
+  text-decoration-thickness: 2px;
+  font-size: 30px;
+  display: flex;
+  justify-content: flex-start;
+}
+.header {
+  display: flex;
+  justify-content: left;
+
+  grid-column-start: 1;
+  grid-column-end: end;
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+.msgSection {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 2;
+  grid-row-end: end;
+
+  overflow: auto;
+}
+.chat {
+  grid-column-start: 5;
+  grid-column-end: end;
+  grid-row-start: 2;
+  grid-row-end: end;
+
+  overflow: auto;
+}
+.bright,
+.brLet::first-letter {
+  color: var(--CapitalLime);
+}
+.messageID {
+  opacity: 0;
+  font-size: 0.7em;
+  text-align: center;
+  cursor: pointer;
+}
+.messageID:hover {
+  opacity: 1;
+}
+.messageElement:has([title*="Nov 1987"]) .messageID {
+  display: none;
+  /* "yeah fuck it disable message ids unless you reload the page" */
+}
+.messageElement:not(:has(code[class*="nowrapMode"])) :is(a[href^="https://limechatt-slice.glitch.me/#msgID-"], .msg-link)
+{
+  display: block;
+  padding: 8px;
+  border: 1px solid var(--DarkLime);
+  border-left: 3px solid var(--DarkLime);
+  color: var(--small);
+  font-size: 0.8em;
+  background-image: url("https://cdn.glitch.global/39c26745-7068-481c-98bc-5f9f1aab8f32/double-quotes.svg");
+  background-position: right;
+  background-repeat: repeat-y;
+  background-size: 85px;
+  text-decoration: none;
+  
+  &::before {
+    content: open-quote;
+  }
+  &::after {
+    content: close-quote;
+  }
+}
+/*
+my dumbass just realized this just works for me lmaoo
+.messageID[onclick*="#msgID-19036040"] {
+  cursor: not-allowed;
+  visibility: hidden;
+}
+.messageID[onclick*="#msgID-19036040"]::before {
+  content: "Please reload the page.";
+  color: var(--small)
+}
+*/
+.small,
+.titleHandler details {
+  font-size: 0.7em;
+  color: var(--small);
+}
+.titleHandler :is(details, summary) {
+  text-align: right;
+  display: block;
+}
+.titleHandler summary {
+  cursor: pointer;
+  margin: 0 10px;
+}
+.titleHandler details[open] summary {
+  display: none;
+}
+.nameInput,
+.textareaInput {
+  margin: 5px;
+}
+.sendInput {
+  margin: 5px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.messageElement {
+  text-align: left;
+  overflow: auto;
+  border: 1px solid var(--DarkLime);
+  padding: 5px;
+  margin: 10px;
+}
+.messageElement:target {
+  animation: messageFlash 1.4s;
+  animation-timing-function: ease-in-out;
+  border: 2px dashed var(--DarkLime);
+}
+@keyframes messageFlash {
+  0% {
+    border: 2px dashed var(--DarkLime);
+  }
+  25% {
+    border: 2px dashed var(--FineLime);
+  }
+  50% {
+    border: 2px dashed var(--DarkLime);
+  }
+  75% {
+    border: 2px dashed var(--FineLime);
+  }
+  100% {
+    border: 2px dashed var(--DarkLime);
+  }
+}
+.messageContent {
+  margin: 13px 0;
+}
+.messageContent p {
+  margin: 0;
+  white-space: pre-wrap;
+  line-height: normal;
+  display: inline;
+}
+.messageContent :is(h1, h2, h3, h4, h5, h6) {
+  color: black;
+}
+.messageElement br {
+  line-height: 0px;
+}
+.messageContent pre {
+  margin: 0;
+}
+.titleHandler {
+  display: flex;
+  /* justify-content: space-evenly; */
+  align-items: center;
+  width: -webkit-fill-available;
+  border: 1px solid var(--DarkLime);
+  padding: 0 15px;
+  color: var(--small);
+}
+.titleHandler * {
+  flex: 1;
+  margin: 10px;
+}
+.titleHandler:hover {
+  background-color: var(--transparent);
+}
+img {
+  max-width: 100%;
+}
+/*
+img[src="https://limechatt-slice.glitch.me/sort/limefolder.svg"] {
+  display: none;
+}
+.messageElement:has(img[src="https://limechatt-slice.glitch.me/sort/limefolder.svg"]) .titleHandler > i::after
+{
+  content: "Folder";
+  font-size: 10px;
+  display: inline;
+  margin-left: 10px;
+  padding: 0 3px;
+  color: var(--DarkLime);
+  border-radius: 2px;
+  background-color: var(--transparent);
+  border: 1px solid var(--DarkLime);
+}
+*/
+.embed, .embed:is(:has(a[href^="https://limechatt-slice.glitch.me/#msgID-"]))
+{
+  display: none;
+}
+.embed:has(a[href*="&embed"]) {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--transparent);
+
+  box-sizing: border-box;
+  border: 1px solid var(--DarkLime);
+  border-left: 10px solid var(--DarkLime);
+  border-radius: 5px;
+
+  padding: 15px 10px;
+  margin-top: 8px;
+  width: fit-content;
+
+  & br {
+    line-height: 10px;
+  }
+}
+.embed-title {
+  font-weight: bold;
+}
+.embed-description,
+.embed h5 {
+  font-weight: normal;
+  white-space: pre-wrap;
+  color: var(--small);
+  margin: 0;
+}
+.embed-details {
+  display: block;
+}
+.embed-image {
+  width: 60px;
+  border-radius: 5px;
+}
+.large-img {
+  width: -webkit-fill-available;
+  margin: 0;
+}
+.embed:not(:has(.large-img)) {
+  flex-direction: row !important;
+  & .embed-image {
+    margin-left: 8px;
+  }
+}

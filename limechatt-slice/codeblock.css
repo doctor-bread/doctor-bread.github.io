@@ -1,0 +1,148 @@
+pre > code {
+  display: block;
+}
+code[class|="language"] {
+  all: unset;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: inherit;
+  color: inherit;
+}
+code.language-rainbow {
+  animation-name: rainbow;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes rainbow {
+  0% {
+    color: #ff0000;
+  }
+  17% {
+    color: #ffff00;
+  }
+  33% {
+    color: #00ff00;
+  }
+  50% {
+    color: #00ffff;
+  }
+  67% {
+    color: #0000ff;
+  }
+  83% {
+    color: #ff00ff;
+  }
+  100% {
+    color: #ff0000;
+  }
+}
+code.language-spoiler {
+  color: transparent !important;
+  background-color: #bdbdbd;
+  cursor: pointer;
+  padding: 0 3px;
+  border-radius: 2px;
+}
+code.language-spoiler.show {
+  color: black !important;
+  cursor: auto;
+}
+code.language-comicsans {
+  font-family: "Comic Sans MS", "Chalkboard SE", "Comic Neue", Arial, sans-serif;
+}
+@font-face {
+  font-family: "Papyrus Serif";
+  src: url("https://file.garden/ZSfbzoaLWgVEMKsW/papyrus.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+code.language-papyrus {
+  font-family: "Papyrus Serif", sans-serif;
+  font-size: 18px;
+}
+img[alt*="glow_"] {
+  filter: drop-shadow(0 0 8px var(--glow));
+}
+img[alt*="spoiler_"] {
+  filter: blur(8px);
+}
+img[alt*="spoiler_"]:hover {
+  filter: inherit;
+}
+img[alt*="rainbow_"] {
+  animation: rainbow-img 1s infinite;
+}
+@keyframes rainbow-img {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+/*
+.messageElement:has(code[class$="Mode"]) .titleHandler > i::after
+{
+  content: "Folder";
+  font-size: 10px;
+  display: inline;
+  margin-left: 10px;
+  padding: 0 3px;
+  color: var(--DarkLime);
+  border-radius: 2px;
+  background-color: var(--transparent);
+  border: 1px solid var(--DarkLime);
+}
+*/
+.messageElement:has(code[class$="Mode"]) .titleHandler > i::after {
+  content: "Mode(?)";
+  font-size: 10px;
+  display: inline;
+  margin-left: 10px;
+  padding: 0 3px;
+  color: var(--DarkLime);
+  border-radius: 2px;
+  background-color: var(--transparent);
+  border: 1px solid var(--DarkLime);
+}
+.messageElement:has(code[class*="fireMode"]) .titleHandler > i::after {
+  content: "Fire";
+  border: 1px solid var(--dbRed);
+  color: white;
+}
+.messageElement:has(code[class*="nowrapMode"]) .titleHandler > i::after {
+  content: "NoWrap";
+}
+pre:has(code[class$="Mode"]) {
+  display: none !important;
+  /* "Mode" just hides message on slice */
+}
+.messageElement:has(code.language-fireMode) {
+  border: 1px solid var(--dbRed);
+  background: var(--piBlack)
+    url("https://cdn.glitch.global/4a2a8b82-7194-4ed4-8fae-7e3e8fe23bca/fire.gif")
+    repeat-x center / 220px;
+  background-blend-mode: overlay;
+}
+.messageElement:has(code.language-fireMode) > .titleHandler {
+  color: white;
+  border: 1px solid var(--dbRed);
+}
+.messageElement:has(code.language-fireMode) * {
+  color: white;
+}
+.messageElement:has(code[class*="nowrapMode"])
+  pre:has(code[class^="language-"]) {
+  white-space: nowrap;
+  display: inline;
+}
+.messageElement:has(code[class*="nowrapMode"]) a[href^="https://limechatt-slice.glitch.me/#msgID-"], .msg-link
+{
+  color: var(--small);
+  text-decoration: underline dotted 1px;
+}
+.messageElement:has(code[class*="nowrapMode"]) a[href^="https://limechatt-slice.glitch.me/#msgID-"]::before
+{
+  content: "🗨 ";
+}

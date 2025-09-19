@@ -1,0 +1,63 @@
+User -> Anonymous Limechattter
+
+delete the msgInput.value = "";
+
+function createMessage(
+  author,
+  message,
+  date = new Date("11/13/1987"),
+  attachmentURI = ""
+) {
+  const messageElement = document.createElement("div");
+  const titleHandler = document.createElement("div");
+  const authorName = document.createElement("i");
+  const messageContent = document.createElement("div");
+  const dateContainer = document.createElement("time");
+  const dateTime = document.createElement("span");
+  const dateTimeAlt = document.createElement("span");
+  const messageID = document.createElement("div");
+
+  dateTime.textContent = date.toLocaleTimeString();
+  dateTimeAlt.textContent = date.toUTCString();
+  authorName.textContent = author;
+
+  messageElement.classList.add("messageElement");
+  messageContent.classList.add("messageContent");
+  titleHandler.classList.add("titleHandler");
+  messageID.classList.add("messageID");
+  dateTimeAlt.classList.add("hidden");
+  messageElement.id =
+    "msgID-" +
+    simpleHash(
+      authorName.textContent +
+        messageContent.textContent +
+        dateTimeAlt.textContent
+    );
+  messageID.textContent = "#" + messageElement.id;
+  messageID.setAttribute("onclick", "reply('" + messageID.textContent + "')");
+
+  messageContent.innerHTML = message;
+
+  titleHandler.appendChild(authorName);
+  titleHandler.appendChild(messageID);
+  titleHandler.appendChild(dateContainer);
+  dateContainer.appendChild(dateTime);
+  dateContainer.appendChild(dateTimeAlt);
+  messageElement.prepend(messageContent);
+  messageElement.prepend(titleHandler);
+  messageWall.prepend(messageElement);
+}
+
+function simpleHash(input) {
+  let hash = 0;
+  for (let i = 0; i < input.length; i++) {
+    const char = input.charCodeAt(i);
+    hash = (hash << 5) - hash + char;
+    hash |= 0;
+  }
+
+  const numericHash = Math.abs(hash).toString().slice(0, 8);
+
+  return `${numericHash}`;
+}
+

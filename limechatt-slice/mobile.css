@@ -1,0 +1,32 @@
+@media (max-width: 768px) {
+  body {
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    gap: 15px;
+  }
+  .header {
+    display: flex;
+    justify-content: left;
+    grid-column-start: 1;
+    grid-column-end: end;
+    grid-row-start: 1;
+  }
+  .chat {
+    grid-column-start: 1;
+    grid-column-end: end;
+    grid-row-start: 2;
+    grid-row-end: 7;
+    overflow: auto;
+  }
+  .msgSection {
+    grid-column-start: 1;
+    grid-column-end: end;
+    grid-row-start: 7;
+    grid-row-end: end;
+    overflow: auto;
+  }
+  textarea {
+    height: 70px;
+  }
+}

@@ -1,0 +1,228 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.8" />
+    <meta property="og:title" content="Limechatt^Slice" />
+    <meta name="twitter:title" content="Limechatt^Slice" />
+    <meta name="theme-color" content="#68df50" />
+    <meta
+      property="og:description"
+      content="A very simple chatting website.
+This is a modified client about Limechatt."
+    />
+    <meta
+      property="description"
+      content="A very simple chatting website.
+This is a modified client about Limechatt."
+    />
+    <meta
+      property="twitter:description"
+      content="A very simple chatting website.
+This is a modified client about Limechatt."
+    />
+    <meta
+      property="og:image"
+      content="https://cdn.glitch.global/4a2a8b82-7194-4ed4-8fae-7e3e8fe23bca/embed.png?v=1734774076770"
+    />
+    <meta
+      name="twitter:image"
+      content="https://cdn.glitch.global/4a2a8b82-7194-4ed4-8fae-7e3e8fe23bca/embed.png?v=1734774076770"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Limechatt^Slice</title>
+    <link
+      rel="shortcut icon"
+      href="https://limechatt-slice.glitch.me/lime.svg"
+      type="image/x-icon"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://limechatt.github.io/lime.svg"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mobile.css" />
+    <link rel="stylesheet" href="//doctorbread.glitch.me/colors.css" />
+    <link rel="stylesheet" href="codeblock.css" />
+  </head>
+  <body>
+    <div class="header">
+      <img src="lime.svg" />
+      <div onclick="refreshPage()" style="cursor: pointer">
+        <div class="logo">
+          <span class="brLet">Lime</span><span class="brLet">Chatt</span>
+          <small class="bright">Slice</small>
+        </div>
+        <div class="small">A very simple chatting website.</div>
+      </div>
+    </div>
+
+    <div class="msgSection">
+      <h3 class="brLet">Form</h3>
+      <hr />
+      <div class="nameInput">
+        <input
+          class="btns"
+          type="text"
+          placeholder=" Your Name"
+          id="authorInput"
+          maxlength="25"
+        />
+      </div>
+      <div class="textareaInput">
+        <textarea
+          class="btns"
+          placeholder=" Your Message (850 char.)"
+          id="msgInput"
+          maxlength="850"
+        ></textarea>
+      </div>
+      <div class="sendInput">
+        <div id="msgOutput">
+          <div class="markdown0 visible">
+            <button onclick="displayItem('#msgOutput', 'markdown1')">
+              Markdown
+            </button>
+          </div>
+          <div class="markdown1 hidden">
+            <div class="flexBtns">
+              <button onclick="markdown('img')">
+                <img src="image/imglime.svg" />
+              </button>
+              <button onclick="markdown('italic')">
+                <em style="font-family: Times New Roman">I</em>
+              </button>
+              <button onclick="markdown('strong')">
+                <strong>S</strong>
+              </button>
+              <button onclick="markdown('link')">
+                <u>Link</u>
+              </button>
+              <button onclick="markdown('heading')">
+                #<span style="font-size: 0.8em">#</span
+                ><span style="font-size: 0.6em">#</span>
+              </button>
+              <button onclick="markdown('list')">
+                •&nbsp;<small>Item</small>
+              </button>
+            </div>
+            <div class="flexBtns">
+              <button onclick="markdown('code')">
+                <span style="font-family: monospace">mono</span>
+              </button>
+              <button onclick="markdown('codeb')">
+                <span style="font-family: monospace">block</span>
+              </button>
+              <button onclick="markdown('hr')">—</button>
+              <button onclick="markdown('checkbox')">✔</button>
+              <button onclick="markdown('strikethrough')">
+                <del>text</del>
+              </button>
+            </div>
+            <hr />
+            <div class="small">Image Effects</div>
+            <div class="flexBtns">
+              <button onclick="markdown('glow')">
+                <img src="image/imglime.svg" style="filter: brightness(120%)" />
+                <span class="small">&nbsp;Glow</span>
+              </button>
+              <button onclick="markdown('blur')">
+                <img src="image/imglime.svg" style="filter: blur(0.6px)" />
+                <span class="small">&nbsp;Blur</span>
+              </button>
+              <button onclick="markdown('rainbow-img')">
+                <img src="image/imglime.svg" alt="rainbow_image" />
+                <span class="small">&nbsp;Rainbow</span>
+              </button>
+            </div>
+            <hr />
+            <div class="small">More Code Blocks</div>
+            <div class="flexBtns">
+              <button onclick="markdown('rainbow')">
+                <small>
+                  <code class="language-rainbow">ZOMG!</code>
+                </small>
+              </button>
+              <button onclick="markdown('spoiler')">
+                <small>
+                  <span style="background-color: #bdbdbd">Spoiler</span>
+                </small>
+              </button>
+              <button onclick="markdown('comicsans')" class="comicsans">
+                <small>sans.</small>
+              </button>
+              <button onclick="markdown('papyrus')" class="papyrus">
+                <small>Papyrus</small>
+              </button>
+            </div>
+            <hr />
+            <div class="small">Message Themes</div>
+            <div class="flexBtns">
+              <button onclick="markdown('fire')" class="codeblockFire">
+                <small>Fire</small>
+              </button>
+              <button onclick="markdown('nowrap')">
+                <small><del>\n</del></small>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div>
+          <button class="btns" onclick="clearMsgInp('msgInput')">Clear</button>
+          <button class="btns sendBtn visible" type="submit" id="sendBtn">
+            Send!
+          </button>
+        </div>
+      </div>
+
+      <hr />
+      <details style="color: var(--DarkLime)">
+        <summary>Credits</summary>
+        <div class="small">
+          Originally made by
+          <a href="https://github.com/BludIsAnLemon">Lemon</a>! (You can buy
+          them a <a href="https://buymeacoffee.com/lemonlime">coffee ☕</a>.)
+          <br />
+          Here's the
+          <a href="https://limechatt.github.io/">original client</a> too.
+          <br />
+          Thanks
+          <a href="https://github.com/derpygamer2142">derpygamer2142</a> for
+          hosting the backend server!
+          <br />
+          Client made by
+          <a href="https://doctorbread.glitch.me/intro">doctorbread</a>. Has a
+          message limit of 750.
+        </div>
+        <hr />
+        <div class="small">Links</div>
+        <div class="flexBtns">
+          <button onclick="markdown('link')">
+            <u>Trusted</u>
+          </button>
+          <button onclick="markdown('linkX')">
+            <u style="color: var(--untrusted)"> Untrusted ⚠ </u>
+          </button>
+          <button onclick="markdown('linkJS')">
+            <u class="js-link"> JavaScript ⚠ </u>
+          </button>
+          <button onclick="markdown('linkMsg')">
+            <u class="msg-link"> 🗨 Message </u>
+          </button>
+          <button onclick="markdown('linkEmbed')">
+            <u> Embed </u>
+          </button>
+        </div>
+      </details>
+    </div>
+
+    <div class="chat">
+      <h3 class="brLet">Messages</h3>
+      <hr />
+      <div id="messageWall"></div>
+    </div>
+    <script src="index.js"></script>
+    <script src="markdown-btn.js"></script>
+    <script src="https://doctorbread.glitch.me/visibilityV2.js"></script>
+  </body>
+</html>
